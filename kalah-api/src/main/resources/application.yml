@@ -8,3 +8,6 @@ spring:
     url: jdbc:postgresql://localhost:5432/kalah
     username: kalah
     password: kalah
+
+springdoc:
+  packages-to-scan: org.mrsash.kalahapi.controller

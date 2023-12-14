@@ -5,7 +5,7 @@
 *  [ ] add player logic
     *  [ ] create player
     *  [ ] get all player games
-*  [ ] add swagger
+*  [x] add swagger
 *  [ ] add game logic
     *  [ ] create new offline game
     *  [ ] get game state
