@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/kalah
+    username: kalah
+    password: kalah
