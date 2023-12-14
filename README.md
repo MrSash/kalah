@@ -1,6 +1,6 @@
 ## TO-DO List
 
-*  [ ] init client and server side
+*  [x] init client and server side
 *  [ ] init test runner
 *  [ ] add player logic
     *  [ ] create player

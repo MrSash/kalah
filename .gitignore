@@ -1,2 +1,6 @@
 .idea
+*.iml
 kalah-api/target
+kalah-client/node_modules
+kalah-client/.vscode
+kalah-client/.angular
