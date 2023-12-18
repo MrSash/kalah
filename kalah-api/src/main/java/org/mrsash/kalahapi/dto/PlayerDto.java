@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class PlayerDto {
 
     @NotBlank
-    private UUID playerId;
+    private UUID id;
     @NotBlank
     private String name;
 }

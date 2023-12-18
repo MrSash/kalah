@@ -42,7 +42,7 @@ public class PlayerController {
      */
     @Operation(summary = "Player login")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Successfully login"),
+            @ApiResponse(responseCode = "200", description = "Successfully logged in"),
             @ApiResponse(
                     responseCode = "400",
                     description = "Incorrect login request. Check validation boundaries",
@@ -64,7 +64,7 @@ public class PlayerController {
 
     @Operation(summary = "Get player")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Successfully get player"),
+            @ApiResponse(responseCode = "200", description = "Successfully got player"),
             @ApiResponse(responseCode = "404", description = "Player not found", content = @Content)
     })
     @GetMapping("/{playerId}")
@@ -74,15 +74,15 @@ public class PlayerController {
 
     @Operation(summary = "Create new player")
     @ApiResponses({
-            @ApiResponse(responseCode = "200", description = "Successfully create new player"),
+            @ApiResponse(responseCode = "200", description = "Successfully created new player"),
             @ApiResponse(
                     responseCode = "400",
-                    description = "Incorrect create body request. Check validation boundaries",
+                    description = "Incorrect body request. Check validation boundaries",
                     content = @Content
             )
     })
     @PostMapping
-    public void createPlayer(@ParameterObject @Valid @RequestBody PlayerCreateDto playerCreateDto) {
-        playerService.create(playerCreateDto);
+    public PlayerDto createPlayer(@ParameterObject @Valid @RequestBody PlayerCreateDto playerCreateDto) {
+        return playerService.create(playerCreateDto);
     }
 }
