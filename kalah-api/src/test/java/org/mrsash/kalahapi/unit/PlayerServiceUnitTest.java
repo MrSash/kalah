@@ -15,23 +15,32 @@ import org.mrsash.kalahapi.dto.PlayerCreateDto;
 import org.mrsash.kalahapi.dto.PlayerDto;
 import org.mrsash.kalahapi.exception.PlayerNotFoundByNameException;
 import org.mrsash.kalahapi.exception.PlayerNotFoundException;
+import org.mrsash.kalahapi.mapper.IPlayerEntityMapper;
 import org.mrsash.kalahapi.mapper.impl.PlayerEntityMapper;
 import org.mrsash.kalahapi.model.PlayerEntity;
 import org.mrsash.kalahapi.repository.IPlayerRepository;
-import org.mrsash.kalahapi.service.IPlayerService;
 import org.mrsash.kalahapi.service.impl.PlayerService;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.test.context.ContextConfiguration;
+import org.springframework.boot.test.mock.mockito.SpyBean;
+import org.springframework.context.annotation.Bean;
 
-@ContextConfiguration(classes = {PlayerService.class, PlayerEntityMapper.class})
 public class PlayerServiceUnitTest extends AUnitTest {
+
+    @TestConfiguration
+    public static class Config {
+
+        @Bean
+        public IPlayerEntityMapper playerEntityMapper() {
+            return new PlayerEntityMapper();
+        }
+    }
 
     @MockBean
     private IPlayerRepository playerRepository;
 
-    @Autowired
-    private IPlayerService playerService;
+    @SpyBean
+    private PlayerService playerService;
 
     @Test
     public void successfullyLogin() {
@@ -39,7 +48,7 @@ public class PlayerServiceUnitTest extends AUnitTest {
         var name = randomAlphabetic(20);
         var expected = new LoginDto(UUID.randomUUID());
         when(playerRepository.getByName(name))
-                .thenReturn(Optional.of(new PlayerEntity(expected.getPlayerId().toString(), name)));
+                .thenReturn(Optional.of(new PlayerEntity(expected.getPlayerId(), name)));
 
         // When
         var actual = playerService.login(name);
@@ -61,11 +70,11 @@ public class PlayerServiceUnitTest extends AUnitTest {
     public void successfullyGetPlayer() {
         //Given
         var expected = new PlayerDto(UUID.randomUUID(), randomAlphabetic(20));
-        when(playerRepository.findById(expected.getPlayerId().toString()))
-                .thenReturn(Optional.of(new PlayerEntity(expected.getPlayerId().toString(), expected.getName())));
+        when(playerRepository.findById(expected.getId()))
+                .thenReturn(Optional.of(new PlayerEntity(expected.getId(), expected.getName())));
 
         // When
-        var actual = playerService.get(expected.getPlayerId().toString());
+        var actual = playerService.get(expected.getId().toString());
 
         // Then
         assertThat(actual).isEqualTo(expected);
@@ -83,7 +92,7 @@ public class PlayerServiceUnitTest extends AUnitTest {
     @Test
     public void successfullyCreatePlayer() {
         //Given
-        var newPlayer = new PlayerEntity(UUID.randomUUID().toString(), randomAlphabetic(20));
+        var newPlayer = new PlayerEntity(UUID.randomUUID(), randomAlphabetic(20));
         when(playerRepository.save(argThat(it -> it.getName().equals(newPlayer.getName())))).thenReturn(newPlayer);
 
         // When / Then
