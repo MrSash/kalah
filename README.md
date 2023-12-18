@@ -1,6 +1,6 @@
 ## TO-DO List
 
-*  [x] init client and server side
+*  [x] init server side
 *  [x] init test runner
 *  [x] add player logic
     *  [x] create player
@@ -18,6 +18,5 @@
     *  [ ] add nginx
     *  [ ] add docker compose
     *  [ ] create executive file
-*  [ ] complete client side
 *  [ ] add monitoring
 *  [ ] complete README
