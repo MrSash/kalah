@@ -12,11 +12,10 @@
     *  [x] create new offline game
     *  [x] get game state
     *  [x] add movement logic
+*  [x] add monitoring
 *  [ ] create simple runner
     *  [ ] add docker in server
-    *  [ ] add docker in client
     *  [ ] add nginx
     *  [ ] add docker compose
     *  [ ] create executive file
-*  [ ] add monitoring
 *  [ ] complete README

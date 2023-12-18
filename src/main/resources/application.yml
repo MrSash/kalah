@@ -11,3 +11,10 @@ spring:
 
 springdoc:
   packages-to-scan: org.mrsash.kalah.controller
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      base-path: /v1/actuator
