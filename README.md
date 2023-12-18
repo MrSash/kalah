@@ -7,11 +7,11 @@
     *  [x] create login stub
     *  [x] get player state
 *  [x] add swagger
-*  [ ] add game logic
+*  [x] add game logic
     *  [x] get all player games
     *  [x] create new offline game
     *  [x] get game state
-    *  [ ] add movement logic
+    *  [x] add movement logic
 *  [ ] create simple runner
     *  [ ] add docker in server
     *  [ ] add docker in client
