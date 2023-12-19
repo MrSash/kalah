@@ -34,7 +34,7 @@ public class PlayerController {
     }
 
     /**
-     * This method is only a login stub because at the time the server does not have an authorization system,
+     * This method is only a login stub because at the time, the server does not have an authorization system,
      * but we need to identify a player.
      *
      * @param name player name

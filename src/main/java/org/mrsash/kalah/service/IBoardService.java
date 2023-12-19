@@ -6,10 +6,10 @@ import org.mrsash.kalah.dto.GameDto;
 public interface IBoardService {
 
     /**
-     * Create new board
+     * Create a new board
      * Within the home assignment it is just a stub but can easily expand
      *
-     * @return new board as int array
+     * @return new board as an int array
      */
     int[] create();
 
