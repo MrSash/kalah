@@ -5,16 +5,20 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/kalah
-    username: kalah
-    password: kalah
+    url: jdbc:h2:file:./db/dev
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+  h2:
+    console:
+      enabled: true
 
 springdoc:
-  packages-to-scan: org.mrsash.kalah.controller
+  show-actuator: true
 
 management:
   endpoints:
     web:
       exposure:
         include: '*'
-      base-path: /v1/actuator

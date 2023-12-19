@@ -19,7 +19,6 @@ import org.mrsash.kalah.util.MapperUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.testcontainers.service.connection.ServiceConnection;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Component;
@@ -27,20 +26,11 @@ import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.testcontainers.containers.PostgreSQLContainer;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 
-@Testcontainers
 @SpringBootTest
 @AutoConfigureMockMvc
 @DirtiesContext
 public abstract class AIntegrationTest {
-
-    @Container
-    @ServiceConnection
-    @SuppressWarnings("unused")
-    private static final PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:16.1");
 
     @Autowired
     protected RestSender restSender;
@@ -222,7 +212,7 @@ public abstract class AIntegrationTest {
         private ResultActions movePerform(String gameId, int position, TurnType turn) {
             return mockMvc.perform(MockMvcRequestBuilders.post(String.format("/v1/games/%s/move", gameId))
                             .contentType(MediaType.APPLICATION_JSON)
-                            .content(MapperUtil.toJson(new GameMoveDto(gameId, position, turn)))
+                            .content(MapperUtil.toJson(new GameMoveDto(position, turn)))
                     )
                     .andDo(print());
         }
