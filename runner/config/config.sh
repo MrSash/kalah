@@ -1,3 +1,3 @@
 #! /bin/bash
 
-PORT=8082
+PORT=8080

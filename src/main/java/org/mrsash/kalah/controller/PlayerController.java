@@ -12,7 +12,6 @@ import org.mrsash.kalah.dto.LoginDto;
 import org.mrsash.kalah.dto.PlayerCreateDto;
 import org.mrsash.kalah.dto.PlayerDto;
 import org.mrsash.kalah.service.IPlayerService;
-import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -82,7 +81,7 @@ public class PlayerController {
             )
     })
     @PostMapping
-    public PlayerDto createPlayer(@ParameterObject @Valid @RequestBody PlayerCreateDto playerCreateDto) {
+    public PlayerDto createPlayer(@Valid @RequestBody PlayerCreateDto playerCreateDto) {
         return playerService.create(playerCreateDto);
     }
 }
