@@ -1,8 +1,12 @@
 # Kalah (aka Mancala) Game
 
+Kalah is a two-player board game.
+Current project written with Java (17 version), Spring Framework, and maven.
+For storing players and games, this project uses an H2 SQL database.
+Also, it has swagger and metric endpoints.
+
 ## Navigation
 
-* [Description](#description)
 * [The Game Rules](#the-game-rules)
     * [Board Setup](#board-setup)
     * [Game Play](#game-play)
@@ -16,13 +20,6 @@
 * [Using](#using)
 * [Technical approaches](#technical-approaches)
 * [TO-DO List](#to-do-list)
-
-## Description
-
-Kalah is a two-player board game.
-Current project written with Java (17 version), Spring Framework, and maven.
-For storing players and games, this project uses an H2 SQL database.
-Also, it has swagger and metric endpoints.
 
 ## The Game Rules
 
