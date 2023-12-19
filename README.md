@@ -55,8 +55,8 @@ The winner of the game is the player who has the most stones in his big pit.
 
 This project has three options to install it: docker script, maven script, and manually.
 All runner scripts (except third) are contained in the "runner" folder.
-Besides this, they use the "PORT" variable from the config file which is contained in the "config" folder (default is
-8080).
+Besides this, they use the "PORT" variable from the [config.sh](runner%2Fconfig%2Fconfig.sh) file which is
+contained in the "config" folder (default is 8080).
 This folder uses it only for a lightweight running demonstration, not for a real project, especially not for running in
 a production.
 
@@ -68,18 +68,19 @@ a production.
 
 #### Steps
 
-Run a shell script "run.sh" to launch the project. For tests launching use "run_test.sh" script.
+Run a shell script [run.sh](runner%2F1_docker%2Frun.sh) to launch the project.
+For tests launching use [run_test.sh](runner%2F1_docker%2Frun_test.sh) script.
 
 ### Option 2: Maven script
 
 #### Requirements
 
-- Java (recommend at least 17)
+- Java (version at least 17)
 
 #### Steps
 
-Run a shell script "run.sh" to launch the project.
-For test launching use "run_test.sh" script.
+Run a shell script [run.sh](runner%2F2_maven%2Frun.sh) to launch the project.
+For test launching use [run_test.sh](runner%2F2_maven%2Frun_test.sh) script.
 It uses a saved maven wrapper to run it, so you don't need to have a maven.
 
 ### Option 3: Manually
@@ -104,14 +105,15 @@ For tests use IDE or "mvn tests" command.
 #### Steps
 
 Also, "runner" folder contains "request"
-folder with a shell script which will send requests in all endpoints (except actuator endpoints).
+folder with a shell script [send_requests.sh](runner%2Frequest%2Fsend_requests.sh)
+which will send requests in all endpoints (except actuator endpoints).
 It uses a port from config as well.
 
 ## Using
 
 - Default API URL - http://localhost:8080/api
 - Swagger URL (also contains actuator endpoints) - http://localhost:8080/api/swagger-ui/index.html#/
-- H2 SQL DB managing - http://localhost:8080/api/h2-console
+- H2 SQL DB managing (default URL - jdbc:h2:./db/dev, no login and password) - http://localhost:8080/api/h2-console
 
 ## Technical approaches
 
