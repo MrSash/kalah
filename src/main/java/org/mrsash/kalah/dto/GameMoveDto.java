@@ -1,6 +1,5 @@
 package org.mrsash.kalah.dto;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,10 +10,6 @@ import org.mrsash.kalah.model.TurnType;
 @NoArgsConstructor
 @AllArgsConstructor
 public class GameMoveDto {
-
-    @NotNull
-    @NotBlank
-    private String gameId;
 
     private int position;
 

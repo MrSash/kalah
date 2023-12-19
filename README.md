@@ -13,9 +13,7 @@
     *  [x] get game state
     *  [x] add movement logic
 *  [x] add monitoring
-*  [ ] create simple runner
-    *  [ ] add docker in server
-    *  [ ] add nginx
-    *  [ ] add docker compose
-    *  [ ] create executive file
+*  [x] create simple runner
+    *  [x] add docker in server
+    *  [x] create executive file
 *  [ ] complete README

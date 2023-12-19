@@ -72,7 +72,14 @@ public class GameController {
             )
     })
     @PostMapping("/{gameId}/move")
-    public GameMoveResultDto move(@ParameterObject @Valid @RequestBody GameMoveDto gameMoveDto) {
-        return gameService.move(gameMoveDto);
+    public GameMoveResultDto move(
+            @PathVariable("gameId")
+            String gameId,
+            @ParameterObject
+            @Valid
+            @RequestBody
+            GameMoveDto gameMoveDto
+    ) {
+        return gameService.move(gameId, gameMoveDto);
     }
 }
