@@ -14,7 +14,7 @@
         <version>3.2.0</version>
     </parent>
 
-    <description>Kalah is project for Kalah game logic</description>
+    <description>Kalah is a backend project with a game logic of two-player board game with the same name</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

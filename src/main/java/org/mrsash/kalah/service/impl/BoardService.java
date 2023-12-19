@@ -80,7 +80,7 @@ public class BoardService implements IBoardService {
     }
 
     /**
-     * If a player makes a move on his position and its position is empty
+     * If a player makes a move on his position and its position is empty,
      * then he can steal points from the opponent pit in the opposite position.
      */
     private void checkCapture(TurnType turn, int position, int[] pits, BoardDto board) {
@@ -96,7 +96,7 @@ public class BoardService implements IBoardService {
     }
 
     /**
-     * Check that position is not a big pit position, opponent position and not empty position
+     * Check that position is not a big pit position, opponent position and not an empty position
      */
     private void checkMove(UUID gameId, TurnType turn, int position, int[] pits, BoardDto board) {
         if (position == board.getPlayer1BigPit().getPosition() || position == board.getPlayer2BigPit().getPosition()) {
