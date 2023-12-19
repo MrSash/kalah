@@ -151,7 +151,7 @@ public class GameServiceUnitTest extends AUnitTest {
         // When / Then
         assertThrows(
                 GameIncorrectTurnException.class,
-                () -> gameService.move(new GameMoveDto(game.getId().toString(), 0, TurnType.PLAYER_1))
+                () -> gameService.move(game.getId().toString(), new GameMoveDto(0, TurnType.PLAYER_1))
         );
         verify(gameRepository, times(0)).save(any());
         verify(gameRepository, times(0)).deleteById(any());
@@ -166,7 +166,7 @@ public class GameServiceUnitTest extends AUnitTest {
         // When / Then
         assertThrows(
                 GameIncorrectTurnException.class,
-                () -> gameService.move(new GameMoveDto(game.getId().toString(), 0, TurnType.PLAYER_2))
+                () -> gameService.move(game.getId().toString(), new GameMoveDto(0, TurnType.PLAYER_2))
         );
         verify(gameRepository, times(0)).save(any());
         verify(gameRepository, times(0)).deleteById(any());
@@ -189,7 +189,7 @@ public class GameServiceUnitTest extends AUnitTest {
                 .thenReturn(boardResult);
 
         // When
-        var result = gameService.move(new GameMoveDto(game.getId().toString(), position, TurnType.PLAYER_1));
+        var result = gameService.move(game.getId().toString(), new GameMoveDto(position, TurnType.PLAYER_1));
 
         // Then
         assertFalse(result.isFinished());
@@ -216,7 +216,7 @@ public class GameServiceUnitTest extends AUnitTest {
                 .thenReturn(boardResult);
 
         // When
-        var result = gameService.move(new GameMoveDto(game.getId().toString(), position, TurnType.PLAYER_1));
+        var result = gameService.move(game.getId().toString(), new GameMoveDto(position, TurnType.PLAYER_1));
 
         // Then
         assertTrue(result.isFinished());

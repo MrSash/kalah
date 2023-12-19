@@ -79,8 +79,7 @@ public class GameService implements IGameService {
 
     @Transactional
     @Override
-    public GameMoveResultDto move(GameMoveDto gameMoveDto) {
-        var gameId = gameMoveDto.getGameId();
+    public GameMoveResultDto move(String gameId, GameMoveDto gameMoveDto) {
         var position = gameMoveDto.getPosition();
         var clientTurn = gameMoveDto.getTurn();
         log.debug("Try to make a move (game id = {}, position = {}, turn = {})", gameId, position, clientTurn);

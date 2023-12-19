@@ -1,5 +1,5 @@
 create table if not exists player
 (
-    id   uuid primary key default gen_random_uuid(),
+    id   uuid primary key,
     name varchar(30) unique not null
 );

@@ -35,8 +35,9 @@ public interface IGameService {
     /**
      * Make a move. If the game is finished, return state and remove the game
      *
+     * @param gameId game ID
      * @param gameMoveDto move body as {@link GameMoveDto}
      * @return move resul as {@link GameMoveResultDto}
      */
-    GameMoveResultDto move(GameMoveDto gameMoveDto);
+    GameMoveResultDto move(String gameId, GameMoveDto gameMoveDto);
 }
