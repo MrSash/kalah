@@ -2,6 +2,21 @@
 
 ## Navigation
 
+* [Description](#description)
+* [The Game Rules](#the-game-rules)
+    * [Board Setup](#board-setup)
+    * [Game Play](#game-play)
+    * [Capturing Stones](#capturing-stones)
+    * [The Game Ends](#the-game-ends)
+* [Build / Run / Test](#build--run--test)
+    * [Option 1: Docker script](#option-1-docker-script)
+    * [Option 2: Maven script](#option-2-maven-script)
+    * [Option 3: Manually](#option-3-manually)
+    * [Request script](#request-script)
+* [Using](#using)
+* [Technical approaches](#technical-approaches)
+* [TO-DO List](#to-do-list)
+
 ## Description
 
 Kalah is a two-player board game.
