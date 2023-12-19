@@ -11,7 +11,6 @@ import org.mrsash.kalah.dto.GameDto;
 import org.mrsash.kalah.dto.GameMoveDto;
 import org.mrsash.kalah.dto.GameMoveResultDto;
 import org.mrsash.kalah.service.IGameService;
-import org.springdoc.core.annotations.ParameterObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -58,7 +57,7 @@ public class GameController {
             )
     })
     @PostMapping
-    public GameDto createGame(@ParameterObject @Valid @RequestBody GameCreateDto gameCreateDto) {
+    public GameDto createGame(@Valid @RequestBody GameCreateDto gameCreateDto) {
         return gameService.create(gameCreateDto);
     }
 
@@ -75,7 +74,6 @@ public class GameController {
     public GameMoveResultDto move(
             @PathVariable("gameId")
             String gameId,
-            @ParameterObject
             @Valid
             @RequestBody
             GameMoveDto gameMoveDto
