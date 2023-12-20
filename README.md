@@ -1,7 +1,7 @@
 # Kalah (aka Mancala) Game
 
 Kalah is a two-player board game.
-Current project written with Java (17 version), Spring Framework, and maven.
+Current project written with Java (version 17), Spring Framework, and maven.
 For storing players and games, this project uses an H2 SQL database.
 Also, it has swagger and metric endpoints.
 
@@ -75,7 +75,7 @@ For tests launching use [run_test.sh](runner%2F1_docker%2Frun_test.sh) script.
 
 #### Requirements
 
-- Java (version at least 17)
+- Java (version 17)
 
 #### Steps
 
@@ -87,7 +87,7 @@ It uses a saved maven wrapper to run it, so you don't need to have a maven.
 
 #### Requirements
 
-- Java (recommend at least 17)
+- Java (version 17)
 - Maven (recommend 3.9.*)
 
 #### Steps
